@@ -1,0 +1,4 @@
+EXPORTS
+    vsa_thread_core @1
+    vsa_thread_fini @2
+    vsa_thread_init @3

@@ -1,0 +1,108 @@
+# Project: rmsv
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = dllmain.o erro.o libcr.o mm.o dblite.o percent.o findw.o vdata.o crypto/hash/md5.o crypto/hash/sha2.o crypto/zlib/adler32.o crypto/zlib/deflate.o crypto/zlib/infblock.o crypto/zlib/infcodes.o crypto/zlib/inffast.o crypto/zlib/inflate.o crypto/zlib/inftrees.o crypto/zlib/infutil.o crypto/zlib/trees.o crypto/zlib/zutil.o crypto/aes.o crypto/cipher/rijndael.o crypto/bfc/huffman.o crypto/bfc/lz.o crypto/bfc/rice.o crypto/bfc/rle.o crypto/bfc/shannonfano.o
+LINKOBJ  = dllmain.o erro.o libcr.o mm.o dblite.o percent.o findw.o vdata.o crypto/hash/md5.o crypto/hash/sha2.o crypto/zlib/adler32.o crypto/zlib/deflate.o crypto/zlib/infblock.o crypto/zlib/infcodes.o crypto/zlib/inffast.o crypto/zlib/inflate.o crypto/zlib/inftrees.o crypto/zlib/infutil.o crypto/zlib/trees.o crypto/zlib/zutil.o crypto/aes.o crypto/cipher/rijndael.o crypto/bfc/huffman.o crypto/bfc/lz.o crypto/bfc/rice.o crypto/bfc/rle.o crypto/bfc/shannonfano.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -L"D:/projects/lib"   -lgmon -g3
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/projects/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"D:/projects/include"
+BIN      = ../debug/rmsv.dll
+CXXFLAGS = $(CXXINCS) -g3 -DRUNTIME_DLL=1 -DWIN32_H=1
+CFLAGS   = $(INCS) -g3 -DRUNTIME_DLL=1 -DWIN32_H=1
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+DEF      = ../debug/librmsv.def
+STATIC   = ../debug/librmsv.a
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN) $(DEF) $(STATIC)
+
+$(BIN): $(LINKOBJ)
+	$(CC) -shared $(LINKOBJ) -o $(BIN) $(LIBS) -Wl,--output-def,$(DEF),--out-implib,$(STATIC),--add-stdcall-alias
+
+dllmain.o: dllmain.c
+	$(CC) -c dllmain.c -o dllmain.o $(CFLAGS)
+
+erro.o: erro.c
+	$(CC) -c erro.c -o erro.o $(CFLAGS)
+
+libcr.o: libcr.c
+	$(CC) -c libcr.c -o libcr.o $(CFLAGS)
+
+mm.o: mm.c
+	$(CC) -c mm.c -o mm.o $(CFLAGS)
+
+dblite.o: dblite.c
+	$(CC) -c dblite.c -o dblite.o $(CFLAGS)
+
+percent.o: percent.c
+	$(CC) -c percent.c -o percent.o $(CFLAGS)
+
+findw.o: findw.c
+	$(CC) -c findw.c -o findw.o $(CFLAGS)
+
+vdata.o: vdata.c
+	$(CC) -c vdata.c -o vdata.o $(CFLAGS)
+
+crypto/hash/md5.o: crypto/hash/md5.c
+	$(CC) -c crypto/hash/md5.c -o crypto/hash/md5.o $(CFLAGS)
+
+crypto/hash/sha2.o: crypto/hash/sha2.c
+	$(CC) -c crypto/hash/sha2.c -o crypto/hash/sha2.o $(CFLAGS)
+
+crypto/zlib/adler32.o: crypto/zlib/adler32.c
+	$(CC) -c crypto/zlib/adler32.c -o crypto/zlib/adler32.o $(CFLAGS)
+
+crypto/zlib/deflate.o: crypto/zlib/deflate.c
+	$(CC) -c crypto/zlib/deflate.c -o crypto/zlib/deflate.o $(CFLAGS)
+
+crypto/zlib/infblock.o: crypto/zlib/infblock.c
+	$(CC) -c crypto/zlib/infblock.c -o crypto/zlib/infblock.o $(CFLAGS)
+
+crypto/zlib/infcodes.o: crypto/zlib/infcodes.c
+	$(CC) -c crypto/zlib/infcodes.c -o crypto/zlib/infcodes.o $(CFLAGS)
+
+crypto/zlib/inffast.o: crypto/zlib/inffast.c
+	$(CC) -c crypto/zlib/inffast.c -o crypto/zlib/inffast.o $(CFLAGS)
+
+crypto/zlib/inflate.o: crypto/zlib/inflate.c
+	$(CC) -c crypto/zlib/inflate.c -o crypto/zlib/inflate.o $(CFLAGS)
+
+crypto/zlib/inftrees.o: crypto/zlib/inftrees.c
+	$(CC) -c crypto/zlib/inftrees.c -o crypto/zlib/inftrees.o $(CFLAGS)
+
+crypto/zlib/infutil.o: crypto/zlib/infutil.c
+	$(CC) -c crypto/zlib/infutil.c -o crypto/zlib/infutil.o $(CFLAGS)
+
+crypto/zlib/trees.o: crypto/zlib/trees.c
+	$(CC) -c crypto/zlib/trees.c -o crypto/zlib/trees.o $(CFLAGS)
+
+crypto/zlib/zutil.o: crypto/zlib/zutil.c
+	$(CC) -c crypto/zlib/zutil.c -o crypto/zlib/zutil.o $(CFLAGS)
+
+crypto/aes.o: crypto/aes.c
+	$(CC) -c crypto/aes.c -o crypto/aes.o $(CFLAGS)
+
+crypto/cipher/rijndael.o: crypto/cipher/rijndael.c
+	$(CC) -c crypto/cipher/rijndael.c -o crypto/cipher/rijndael.o $(CFLAGS)
+
+crypto/bfc/huffman.o: crypto/bfc/huffman.c
+	$(CC) -c crypto/bfc/huffman.c -o crypto/bfc/huffman.o $(CFLAGS)
+
+crypto/bfc/lz.o: crypto/bfc/lz.c
+	$(CC) -c crypto/bfc/lz.c -o crypto/bfc/lz.o $(CFLAGS)
+
+crypto/bfc/rice.o: crypto/bfc/rice.c
+	$(CC) -c crypto/bfc/rice.c -o crypto/bfc/rice.o $(CFLAGS)
+
+crypto/bfc/rle.o: crypto/bfc/rle.c
+	$(CC) -c crypto/bfc/rle.c -o crypto/bfc/rle.o $(CFLAGS)
+
+crypto/bfc/shannonfano.o: crypto/bfc/shannonfano.c
+	$(CC) -c crypto/bfc/shannonfano.c -o crypto/bfc/shannonfano.o $(CFLAGS)

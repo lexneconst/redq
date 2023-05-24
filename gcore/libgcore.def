@@ -1,0 +1,2 @@
+; dlltool --base-file C:\Users\lexne\AppData\Local\Temp\cca02888.base --output-exp gcore.exp --dllname gcore.dll --output-def libgcore.def --no-export-all-symbols --add-stdcall-alias --exclude-symbol=DllMainCRTStartup --def C:\Users\lexne\AppData\Local\Temp\cca02888.def --output-lib ../lib/libgcore.a
+EXPORTS

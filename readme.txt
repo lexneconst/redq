@@ -1,0 +1,1 @@
+export LD_LIBRARY_PATH=/mnt/d/projects:$LD_LIBRARY_PATH

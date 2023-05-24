@@ -1,0 +1,4 @@
+EXPORTS
+    microp_fini @1
+    microp_init @2
+    microp_run @3
